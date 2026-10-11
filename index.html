@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Symulator budżetu i ROI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="page-head">
+      <h1>Symulator budżetu i ROI</h1>
+      <p class="lead">Podziel roczny budżet marketingowy między kategorie, podaj oczekiwany zwrot
+        i porównaj dwa warianty.</p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Warianty">
+      <button type="button" role="tab" id="tab-A" data-variant="A" aria-selected="true">Wariant A</button>
+      <button type="button" role="tab" id="tab-B" data-variant="B" aria-selected="false">Wariant B</button>
+    </div>
+
+    <section class="card" id="editor" role="tabpanel" aria-labelledby="tab-A">
+      <div class="budget-row">
+        <label for="budget">Roczny budżet (PLN)</label>
+        <input id="budget" type="text" inputmode="decimal" autocomplete="off">
+      </div>
+
+      <table class="cat-table">
+        <thead>
+          <tr>
+            <th scope="col">Kategoria</th>
+            <th scope="col">% budżetu</th>
+            <th scope="col">Oczekiwany ROI %</th>
+            <th scope="col" class="num">Kwota</th>
+            <th scope="col"><span class="sr-only">Usuń</span></th>
+          </tr>
+        </thead>
+        <tbody id="cat-body"></tbody>
+      </table>
+
+      <div class="share-status" id="share-status" aria-live="polite"></div>
+
+      <div class="actions">
+        <button type="button" id="add-cat">+ Dodaj kategorię</button>
+        <button type="button" id="even">Rozłóż równo</button>
+        <button type="button" id="copy">Kopiuj do wariantu B</button>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="result-title">
+      <h2 id="result-title">Wynik — <span id="result-variant">Wariant A</span></h2>
+      <div id="result" aria-live="polite"></div>
+    </section>
+
+    <section class="card" aria-labelledby="compare-title">
+      <h2 id="compare-title">Porównanie A i B</h2>
+      <div id="compare" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="calc.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
