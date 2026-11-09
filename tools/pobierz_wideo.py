@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Pobiera wideo z osadzonego odtwarzacza (np. SproutVideo) do pliku MP4.
 
-Wymagania:  pip install -U yt-dlp   oraz   ffmpeg w PATH
+Wymagania:  pip install -U yt-dlp pycryptodomex   oraz   ffmpeg w PATH
+(pycryptodomex jest opcjonalny, ale bez niego szyfrowane strumienie pobierają się bardzo wolno)
 
 Użycie:
     python tools/pobierz_wideo.py "<URL>" [-o KATALOG] [-q 720] [--referer URL_STRONY]
